@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<recipes xmlns="https://www.w3schools.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://www.w3schools.com recipes.xsd">
+	<recipe title="Uovo Sodo" pot="Pan" place="hotPlates" cooker="1">
+		<action prefab="water" type="movement" target="pot">Metti l'acqua</action>
+		<action prefab="egg" type="movement" target="pot">Metti l'uovo</action>
+		<action type="action" target="hotPlates" on="true">Accendi Fuoco</action>
+		<action type="wait" for="5">Aspetta 5 min</action>
+		<action type="action" target="hotPlates" on="false">Spegni Fuoco</action>
+	</recipe>
+	<recipe title="Pasta al sugo" pot="Saucepan" place="hotPlates" cooker="3">
+		<action prefab="water" type="movement" target="pot">Metti l'acqua</action>
+		<action type="action" target="hotPlates" on="true">Accendi Fuoco</action>
+		<action type="wait" for="2">Fai bollire</action>
+		<action prefab="pasta" type="movement" target="pot">Metti la pasta</action>
+		<action type="wait" for="5">Aspetta 5 min</action>
+		<action prefab="sauce" type="movement" target="pot">Metti il sugo</action>
+		<action type="wait" for="2">Aspetta 2 min</action>
+		<action type="action" target="hotPlates" on="false">Spegni Fuoco</action>
+	</recipe>
+</recipes>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- SCHEMA-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="recipes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="recipe" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="action" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="prefab" type="xs:string"/>
+											<xs:attribute name="type">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="movement"/>
+														<xs:enumeration value="action"/>
+														<xs:enumeration value="wait"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+											<xs:attribute name="target" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="title" type="xs:string" use="required"/>
+						<xs:attribute name="pot" type="xs:string" use="required"/>
+						<xs:attribute name="place" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="hotPlates"/>
+									<xs:enumeration value="cuttingBoard"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
